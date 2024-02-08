@@ -1,0 +1,121 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvk2ihldoa4js"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_p73n4"]
+
+[node name="pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p73n4")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+
+[node name="Play_button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.3
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLAY"
+
+[node name="Restart_button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.7
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+text = "RESTART"
+
+[node name="Music_slider" type="HSlider" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.4
+anchor_right = 0.9
+anchor_bottom = 0.4
+min_value = -30.0
+max_value = 0.0
+
+[node name="Sound_slider" type="HSlider" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.6
+anchor_right = 0.9
+anchor_bottom = 0.6
+min_value = -30.0
+max_value = 0.0
+
+[node name="TextEdit" type="TextEdit" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.4
+anchor_right = 0.2
+anchor_bottom = 0.45
+offset_top = -10.0
+offset_right = -23.0
+focus_mode = 0
+mouse_filter = 2
+placeholder_text = "MUSIC"
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_fit_content_height = true
+caret_type = 1
+caret_move_on_right_click = false
+caret_mid_grapheme = false
+caret_multiple = false
+
+[node name="TextEdit2" type="TextEdit" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.6
+anchor_right = 0.2
+anchor_bottom = 0.6
+offset_top = -9.0
+offset_right = -16.0
+focus_mode = 0
+mouse_filter = 2
+placeholder_text = "SOUND"
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_fit_content_height = true
+caret_type = 1
+caret_move_on_right_click = false
+caret_mid_grapheme = false
+caret_multiple = false
+
+[connection signal="pressed" from="Panel/Play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Panel/Restart_button" to="." method="_on_restart_button_pressed"]
+[connection signal="value_changed" from="Panel/Music_slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Panel/Sound_slider" to="." method="_on_sound_slider_value_changed"]
