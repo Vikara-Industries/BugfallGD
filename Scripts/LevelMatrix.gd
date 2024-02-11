@@ -15,6 +15,10 @@ func _ready():
 func setRowState(rowIndex, RowVisState):
 	for i in NUM_BLOCKS_IN_ROW:
 		levelRows[rowIndex][i].set_visible(RowVisState[i])
+		if RowVisState[i] == false:
+			levelRows[rowIndex][i].set_collision_layer_value(1, false)
+		else:
+			levelRows[rowIndex][i].set_collision_layer_value(1, true)
 		
 	
 func getRowState(rowIndex):
@@ -45,7 +49,6 @@ func generateRandomRowState():
 	
 	var hasHole = false
 	for visibility in randRow:
-		print(visibility)
 		if visibility == false:
 			hasHole = true
 	if not hasHole:
