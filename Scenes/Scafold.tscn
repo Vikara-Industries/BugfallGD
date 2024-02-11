@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bhurpc1j7bfor"]
 
-[ext_resource type="PackedScene" path="res://Tsns/pause_menu.tscn" id="1_cvgac"]
+[ext_resource type="PackedScene" uid="uid://cvk2ihldoa4js" path="res://Tsns/pause_menu.tscn" id="1_cvgac"]
 
 [node name="Scafold" type="Node2D"]
 process_mode = 1
@@ -9,3 +9,4 @@ process_mode = 1
 process_mode = 3
 
 [node name="pause" parent="PauseLayer" instance=ExtResource("1_cvgac")]
+visible = false
