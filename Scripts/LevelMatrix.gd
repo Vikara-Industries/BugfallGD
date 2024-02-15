@@ -56,9 +56,7 @@ func generateRandomRowState():
 		
 	return randRow
 	
-func _input(event):
-	if event is InputEventKey and event.keycode == KEY_ENTER and event.is_released():
-		pushNewRowFromBottom()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
